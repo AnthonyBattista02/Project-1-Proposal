@@ -5,6 +5,7 @@ My goal is to use an API in order to create ranking system. This will grab infor
 Potential challenges for this project will be grabbing the random character from the API as this will help to finally make sure I completely understand how to use APIs. Another challenge will be designing the page. The bracket above seems like it could be challenging to incorporate into the website both because of its shape and size. I might have to create a miniature display of it that you can click on to enlarge it in order to make the site look professional. 
 
 ## Wireframing
+![TheTriwizardTournament drawio](https://github.com/AnthonyBattista02/Triwizard-Tournament/assets/47795224/ec4a0e5f-c392-4bac-95ac-4df607c7046a)
 
 
 
