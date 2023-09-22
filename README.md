@@ -5,7 +5,8 @@ My goal is to use an API in order to create ranking system. This will grab infor
 Potential challenges for this project will be grabbing the random character from the API as this will help to finally make sure I completely understand how to use APIs. Another challenge will be designing the page. The bracket above seems like it could be challenging to incorporate into the website both because of its shape and size. I might have to create a miniature display of it that you can click on to enlarge it in order to make the site look professional. 
 
 ## Wireframing
-![Superhero Clash drawio](https://github.com/AnthonyBattista02/Project-1-Proposal/assets/47795224/d74346ad-5b19-44c7-a8e4-a7ab039f3ec8)
+![Superhero Clash drawio (1)](https://github.com/AnthonyBattista02/Superhero-Clash/assets/47795224/a4ef3e5b-9980-4975-862d-4ee149e8ffdb)
+
 
 ## Pseudocode Steps
 1. Create a call to the API using the key: 845891660486879 and the base url: https://superheroapi.com/api/access-token/
