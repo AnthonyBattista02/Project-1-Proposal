@@ -1,0 +1,58 @@
+body {
+  background-color: antiquewhite;
+}
+#title {
+  margin:auto;
+  width: 315px
+}
+#description {
+  text-align: center;
+}
+#buttons {
+  display: flex;
+  justify-content:space-around;
+}
+button {
+  width: 10%;
+  aspect-ratio: 5 / 1;
+  font-size: 20px;
+}
+img {
+  width: 300px;
+  aspect-ratio: 1;
+}
+ul {
+  font-size: 24px;
+  list-style-type: none;
+}
+#name1 {
+  font-size: 30px;
+}
+#name2 {
+  font-size: 30px;
+}
+#versusPage {
+  position: relative;
+}
+#character1 {
+  position: absolute;
+  left: 400px;
+  top: 50px
+}
+#character2 {
+  position: absolute;
+  right: 400px;
+  top: 50px
+}
+#vs {
+  position: relative;
+  text-align: center;
+  font-size: 76px;
+  top: 150px
+}
+#img1:hover {
+  background-color: rgb(35, 139, 153);
+}
+#img2:hover {
+  background-color: rgb(59, 174, 171);
+}
