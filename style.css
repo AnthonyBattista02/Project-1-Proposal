@@ -56,3 +56,16 @@ ul {
 #img2:hover {
   background-color: rgb(59, 174, 171);
 }
+#winScreen {
+  visibility: hidden;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  width: 600px;
+  text-align: center;
+  font-size: 50px;
+  background-color: rgb(94, 146, 194);
+}
