@@ -98,6 +98,27 @@ ul {
   aspect-ratio: 1;
 
 }
+
+#bracket {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 400px;
+  width: 600px;
+  height: 300px;
+  border: #000 2px solid;
+}
+#round1 {
+  padding: 0;
+}
+#round2 {
+  padding: 0;
+}
+#round3 {
+  padding: 0;
+}
+
+
 @media only screen and (max-width: 1220px) {
   #character1 {
     position: absolute;
