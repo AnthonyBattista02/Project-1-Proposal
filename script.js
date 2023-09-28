@@ -26,38 +26,198 @@ const start = async () => {
 
     //Puts all 8 characters in a list
     charList.push(charGrabbed)
-  }
 
+  }
+  firstRound()
+
+}
+
+function firstRound() {
+  let roundTick = 0
+  updateInfo(0,1)
+    img1.onclick = () => {
+      
+      if (roundTick == 0) {
+        updateInfo(2,3)
+        round2.push(charList[0])
+        console.log('click 1')
+      }
+      if (roundTick == 1) {
+        updateInfo(4,5)
+        round2.push(charList[2])
+        console.log('click 2')
+      } 
+      if (roundTick == 2) {
+        updateInfo(6,7)
+        round2.push(charList[4])
+        console.log('click 3')
+      } 
+      if (roundTick == 3) {
+        round2.push(charList[6])
+        console.log('click 4')
+        secondRound()
+      }
+      roundTick++
+    }
+  
+    img2.onclick = () => {
+      
+      if (roundTick == 0) {
+        updateInfo(2,3)
+        round2.push(charList[1])
+      }
+      if (roundTick == 1) {
+        updateInfo(4,5)
+        round2.push(charList[3])
+      } 
+      if (roundTick == 2) {
+        updateInfo(6,7)
+        round2.push(charList[5])
+      } 
+      if (roundTick == 3) {
+        round2.push(charList[7])
+        secondRound()
+      }
+      roundTick++
+  }
+}
+
+function secondRound() {
+  let roundTick = 0
+  updateInfo2(0,1)
+    img1.onclick = () => {
+      
+      if (roundTick == 0) {
+        updateInfo2(2,3)
+        round3.push(round2[0])
+        console.log("Round2 1")
+      }
+      if (roundTick == 1) {
+        round3.push(round2[2])
+        console.log("Round2 2")
+        finalRound()
+      }
+      roundTick++
+    }
+  
+    img2.onclick = () => {
+      
+      if (roundTick == 0) {
+        updateInfo2(2,3)
+        round3.push(round2[1])
+      }
+      if (roundTick == 1) {
+        round3.push(round2[3])
+        finalRound()
+      }
+      roundTick++
+  }
+}
+
+function finalRound() {
+  updateInfo3(0,1)
+    img1.onclick = () => {
+
+      winGame(round3[0])
+      console.log("RoundWinner")
+      
+    }
+  
+    img2.onclick = () => {
+
+      winGame(round3[1])
+      console.log("RoundWinner")
+      
+    }
+}
+
+function updateInfo(char1, char2) {
   //inserts images from API
-  img1.innerHTML = `<img src=${charList[0].image}>`
-  img2.innerHTML = `<img src=${charList[1].image}>`
+  img1.innerHTML = `<img src=${charList[char1].image}>`
+  img2.innerHTML = `<img src=${charList[char2].image}>`
   
   //inserts names from API
-  name1.innerHTML = charList[0].name
-  name2.innerHTML = charList[1].name
+  name1.innerHTML = charList[char1].name
+  name2.innerHTML = charList[char2].name
 
   //inserts house and patronus from API
-  house1.innerHTML = `House: <br> - ${charList[0].house}`
-  house2.innerHTML = `House: <br> - ${charList[1].house}`
-  patronus1.innerHTML = `Patronus: <br> - ${charList[0].patronus}`
-  patronus2.innerHTML = `Patronus: <br> - ${charList[1].patronus}`
+  house1.innerHTML = `House: <br> - ${charList[char1].house}`
+  house2.innerHTML = `House: <br> - ${charList[char2].house}`
+  patronus1.innerHTML = `Patronus: <br> - ${charList[char1].patronus}`
+  patronus2.innerHTML = `Patronus: <br> - ${charList[char2].patronus}`
 
   //fills in N/A when needed 
-  if (charList[0].house == "") {
+  if (charList[char1].house == "") {
     house1.innerHTML = `House: <br> - N/A`
   }
-  if (charList[1].house == "") {
+  if (charList[char2].house == "") {
     house2.innerHTML = `House: <br> - N/A`
   }
-  if (charList[0].patronus == "") {
+  if (charList[char1].patronus == "") {
     patronus1.innerHTML = `Patronus: <br> - N/A`
   }
-  if (charList[1].patronus == "") {
+  if (charList[char2].patronus == "") {
     patronus2.innerHTML = `Patronus: <br> - N/A`
   }
+}
 
-  img1.onclick = () => {
-    round2.push(charList[0])
+function updateInfo2(char1, char2) {
+  //inserts images from API
+  img1.innerHTML = `<img src=${round2[char1].image}>`
+  img2.innerHTML = `<img src=${round2[char2].image}>`
+  
+  //inserts names from API
+  name1.innerHTML = round2[char1].name
+  name2.innerHTML = round2[char2].name
+
+  //inserts house and patronus from API
+  house1.innerHTML = `House: <br> - ${round2[char1].house}`
+  house2.innerHTML = `House: <br> - ${round2[char2].house}`
+  patronus1.innerHTML = `Patronus: <br> - ${round2[char1].patronus}`
+  patronus2.innerHTML = `Patronus: <br> - ${round2[char2].patronus}`
+
+  //fills in N/A when needed 
+  if (round2[char1].house == "") {
+    house1.innerHTML = `House: <br> - N/A`
+  }
+  if (round2[char2].house == "") {
+    house2.innerHTML = `House: <br> - N/A`
+  }
+  if (round2[char1].patronus == "") {
+    patronus1.innerHTML = `Patronus: <br> - N/A`
+  }
+  if (round2[char2].patronus == "") {
+    patronus2.innerHTML = `Patronus: <br> - N/A`
+  }
+}
+
+function updateInfo3(char1, char2) {
+  //inserts images from API
+  img1.innerHTML = `<img src=${round3[char1].image}>`
+  img2.innerHTML = `<img src=${round3[char2].image}>`
+  
+  //inserts names from API
+  name1.innerHTML = round3[char1].name
+  name2.innerHTML = round3[char2].name
+
+  //inserts house and patronus from API
+  house1.innerHTML = `House: <br> - ${round3[char1].house}`
+  house2.innerHTML = `House: <br> - ${round3[char2].house}`
+  patronus1.innerHTML = `Patronus: <br> - ${round3[char1].patronus}`
+  patronus2.innerHTML = `Patronus: <br> - ${round3[char2].patronus}`
+
+  //fills in N/A when needed 
+  if (round3[char1].house == "") {
+    house1.innerHTML = `House: <br> - N/A`
+  }
+  if (round3[char2].house == "") {
+    house2.innerHTML = `House: <br> - N/A`
+  }
+  if (round3[char1].patronus == "") {
+    patronus1.innerHTML = `Patronus: <br> - N/A`
+  }
+  if (round3[char2].patronus == "") {
+    patronus2.innerHTML = `Patronus: <br> - N/A`
   }
 }
 
