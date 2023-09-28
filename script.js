@@ -134,7 +134,7 @@ function finalRound() {
 }
 
 function winGame(winner) {
-  winScreen.innerHTML = `${winner.name} Wins! <br> <img src=${winner.image}>`
+  winScreen.innerHTML = `${winner.name} Wins! <br> <img id="winImg" src=${winner.image}>`
   winScreen.style.visibility = 'visible'
   favList.innerHTML += `<li class='winList'>${winner.name}</li>`
 }

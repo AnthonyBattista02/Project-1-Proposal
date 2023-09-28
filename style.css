@@ -1,5 +1,10 @@
 body {
-  background-color: antiquewhite;
+  background-color: #DAC0A3;
+}
+header {
+  background-color: #0F2C59;
+  color: #EADBC8;
+  padding: 10px;
 }
 #title {
   margin:auto;
@@ -39,12 +44,12 @@ ul {
 }
 #character1 {
   position: absolute;
-  left: 400px;
+  left: 20%;
   top: 50px
 }
 #character2 {
   position: absolute;
-  right: 400px;
+  right: 20%;
   top: 50px
 }
 #vs {
@@ -54,32 +59,105 @@ ul {
   top: 150px
 }
 #img1:hover {
-  background-color: rgb(35, 139, 153);
+  background-color: #0F2C59;
+  opacity: .6;
 }
 #img2:hover {
-  background-color: rgb(59, 174, 171);
+  background-color: #0F2C59;
+  opacity: .6;
 }
 #winScreen {
   visibility: hidden;
-  height: 400px;
+  height: auto;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: 2px solid black;
-  width: 600px;
+  width: auto;
   text-align: center;
   font-size: 50px;
-  background-color: rgb(94, 146, 194);
+  background-color: #0F2C59;
+  color: #F8F0E5;
 }
 #favorites {
   font-size: 20px;
   font-weight: bold;
   border: 2px solid black;
-  width: 220px
+  width: 220px;
+  background-color: #0F2C59;
+  color: #F8F0E5;
 }
 .winList {
   list-style-type:circle;
   font-weight: lighter;
   font-size: 20px;
+}
+#winImg {
+  width: 200px;
+  aspect-ratio: 1;
+
+}
+@media only screen and (max-width: 1220px) {
+  #character1 {
+    position: absolute;
+    left: 5%;
+    top: 50px
+  }
+  #character2 {
+    position: absolute;
+    right: 5%;
+    top: 50px
+  }
+  #favorites {
+    position: relative; 
+    top: 500px;
+    text-align: center;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 810px) {
+  #versusPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #character1 {
+    position: static;
+    margin: auto;
+    
+  }
+  #character2 {
+    position: static;
+    margin: auto;
+    padding: 50px;
+    
+  }
+  #vs {
+    visibility: hidden;
+  }
+  #resetBtn {
+    min-width: 70px;
+  }
+  #favorites {
+    position: relative;
+    top: 0px
+  }
+}
+
+@media only screen and (max-height: 1100px) {
+  #winScreen {
+    top:60%;
+  }
+}
+@media only screen and (max-height: 750px) {
+  #winScreen {
+    top:85%;
+  }
+}
+@media only screen and (max-height: 530px) {
+  #winScreen {
+    top:90%;
+  }
 }
