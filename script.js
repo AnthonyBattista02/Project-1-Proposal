@@ -10,6 +10,8 @@ let house2 = document.querySelector('#house2')
 let patronus1 = document.querySelector('#patronus1')
 let patronus2 = document.querySelector('#patronus2')
 let winScreen = document.querySelector('#winScreen')
+let favList = document.querySelector('#favList')
+let resetbtn = document.querySelector('#resetBtn')
 
 //Gets 8 random characters from API
 const start = async () => {
@@ -134,6 +136,18 @@ function finalRound() {
 function winGame(winner) {
   winScreen.innerHTML = `${winner.name} Wins! <br> <img src=${winner.image}>`
   winScreen.style.visibility = 'visible'
+  favList.innerHTML += `<li class='winList'>${winner.name}</li>`
+}
+
+function reset() {
+  resetbtn.onclick = () => {
+    winScreen.style.visibility = 'hidden'
+    charList = []
+    round2 = []
+    round3 = []
+
+    start()
+  }
 }
 
 function updateInfo(char1, char2) {
@@ -229,3 +243,4 @@ function updateInfo3(char1, char2) {
 console.log(charList)
 
 start()
+reset()

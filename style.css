@@ -10,7 +10,7 @@ body {
 }
 #buttons {
   display: flex;
-  justify-content:space-around;
+  justify-content:center;
 }
 button {
   width: 10%;
@@ -20,6 +20,9 @@ button {
 img {
   width: 300px;
   aspect-ratio: 1;
+  border: 2px solid black;
+  object-fit: cover;
+  object-position: 0% 0%;
 }
 ul {
   font-size: 24px;
@@ -68,4 +71,15 @@ ul {
   text-align: center;
   font-size: 50px;
   background-color: rgb(94, 146, 194);
+}
+#favorites {
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid black;
+  width: 220px
+}
+.winList {
+  list-style-type:circle;
+  font-weight: lighter;
+  font-size: 20px;
 }
